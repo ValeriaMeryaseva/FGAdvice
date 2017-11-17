@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--buttons-->
+    <style name="ButtonsStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/buttonsTextColor</item>
+        <item name="android:textSize">@dimen/buttons_text_size</item>
+        <item name="android:layout_margin">@dimen/buttons_margin</item>
+    </style>
+
+    <!--advices-->
+    <style name="AdviceStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/advice_text_size</item>
+        <item name="android:layout_margin">@dimen/advice_margin</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <!--buttons-->
+        <dimen name="buttons_text_size">18sp</dimen>
+        <dimen name="buttons_margin">10dp</dimen>
+        <dimen name="delete_favorite_button_margin">5dp</dimen>
+
+        <!--advices-->
+        <dimen name="advice_text_size">26sp</dimen>
+        <dimen name="advice_margin">30dp</dimen>
+
+</resources>

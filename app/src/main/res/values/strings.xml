@@ -1,3 +1,16 @@
 <resources>
+
     <string name="app_name">FGAdvice</string>
+
+    <!--tabs-->
+    <string name="advice_tab">Совет</string>
+    <string name="favorites_tab">Избранные советы</string>
+
+    <!--buttons-->
+    <string name="new_advice_button">Другой совет</string>
+    <string name="add_to_favorites_button">Сохранить</string>
+    <string name="delete_advice_button">Удалить</string>
+
+    <string name="example_advice">Верь в себя, блять!</string>
+
 </resources>
