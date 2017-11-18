@@ -4,7 +4,10 @@ import android.app.Fragment;
 import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.lera.fgadvice.db.DatabaseDAO;
+import com.example.lera.fgadvice.db.DatabaseHelper;
 import com.example.lera.fgadvice.model.Advice;
 import com.example.lera.fgadvice.net.LoadAdvice;
 
@@ -25,21 +28,28 @@ public class AdviceFragment extends Fragment {
     private final static String URL = "http://fucking-great-advice.ru/";
 
     private Advice mAdvice;
+    private DatabaseDAO db;
 
     @ViewById(R.id.advice_text)
     TextView mAdviceTextView;
 
     @Click(R.id.new_advice_button)
     public void showNewAdvice() {
-        Request();
+        request();
+    }
+
+    @Click(R.id.save_advice_button)
+    public void saveAdviceToDB() {
+        DatabaseHelper.saveAdviceToDB(db, mAdvice);
     }
 
     @AfterViews
     public void bindViews() {
-        Request();
+        db = DatabaseDAO.getDBInstance(getActivity());
+        request();
     }
 
-    private void Request() {
+    private void request() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL)
                 .addConverterFactory(GsonConverterFactory.create())

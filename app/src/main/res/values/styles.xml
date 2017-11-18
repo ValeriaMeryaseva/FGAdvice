@@ -16,6 +16,13 @@
         <item name="android:layout_margin">@dimen/buttons_margin</item>
     </style>
 
+    <style name="DeleteButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/deleteButtonTextColor</item>
+        <item name="android:textSize">@dimen/delete_button_text_size</item>
+        <item name="android:layout_margin">@dimen/buttons_margin</item>
+    </style>
+
     <!--advices-->
     <style name="AdviceStyle">
         <item name="android:textColor">@color/colorAccent</item>

@@ -30,4 +30,8 @@ dependencies {
     compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.yahoo.squidb:squidb:3.2.3'
+    compile 'com.yahoo.squidb:squidb-annotations:3.2.3'
+    compile 'com.yahoo.squidb:squidb-android:3.2.3'
+    annotationProcessor 'com.yahoo.squidb:squidb-processor:3.2.3'
 }

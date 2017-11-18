@@ -2,20 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
+
+    <Button
+        android:id="@+id/delete_button"
+        style="@style/DeleteButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/delete_advice_button" />
 
     <TextView
         android:id="@+id/advice_text"
         style="@style/AdviceStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/example_advice" />
+        android:layout_below="@+id/delete_button" />
 
-    <Button
-        android:id="@+id/delete_button"
-        style="@style/ButtonsStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/advice_text"
-        android:text="@string/delete_advice_button" />
 </RelativeLayout>
