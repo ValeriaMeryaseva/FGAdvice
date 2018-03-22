@@ -1,6 +1,7 @@
 package com.example.lera.fgadvice;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
@@ -30,6 +31,9 @@ public class AdviceFragment extends Fragment {
     private Advice mAdvice;
     private DatabaseDAO db;
 
+    CallBack callBack;
+
+
     @ViewById(R.id.advice_text)
     TextView mAdviceTextView;
 
@@ -38,9 +42,17 @@ public class AdviceFragment extends Fragment {
         request();
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        callBack = (CallBack) context;
+    }
+
     @Click(R.id.save_advice_button)
     public void saveAdviceToDB() {
-        DatabaseHelper.saveAdviceToDB(db, mAdvice);
+//        DatabaseHelper.saveAdviceToDB(db, mAdvice);
+//        callBack.updateList(mAdvice);
+        addToDB(mAdvice);
     }
 
     @AfterViews
@@ -73,4 +85,13 @@ public class AdviceFragment extends Fragment {
             }
         });
     }
+
+    private void addToDB(Advice fAdvice) {
+        int flag = DatabaseHelper.saveAdviceToDB(db, fAdvice);
+        if (flag == -1) {
+            return;
+        }
+//        callBack.updateList(fAdvice);
+    }
+
 }

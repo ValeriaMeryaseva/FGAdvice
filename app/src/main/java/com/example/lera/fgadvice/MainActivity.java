@@ -1,18 +1,20 @@
 package com.example.lera.fgadvice;
 
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.LinearLayout;
+import android.util.Log;
 import android.widget.TabHost;
-import android.widget.Toast;
+
+import com.example.lera.fgadvice.model.Advice;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.activity_main)
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CallBack {
+
+    @ViewById(R.id.tabHost)
+    TabHost tabHost;
 
     @AfterViews
     public void bindView() {
@@ -30,5 +32,12 @@ public class MainActivity extends AppCompatActivity {
         tabHost.addTab(tabSpec);
 
         tabHost.setCurrentTab(0);
+    }
+
+    @Override
+    public void updateList(Advice advice) {
+        FavoritesFragment_ fragment = new FavoritesFragment_();
+        fragment.UpdateList(advice);
+        Log.d("Tag", "Update");
     }
 }

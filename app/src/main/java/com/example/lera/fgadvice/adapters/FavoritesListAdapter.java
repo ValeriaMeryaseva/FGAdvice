@@ -31,6 +31,9 @@ public class FavoritesListAdapter extends BaseAdapter {
     public int getCount() {
         return list.size();
     }
+    public void addElement(Advice fAdvice){
+        list.add(fAdvice);
+    }
 
     @Override
     public Advice getItem(int i) {

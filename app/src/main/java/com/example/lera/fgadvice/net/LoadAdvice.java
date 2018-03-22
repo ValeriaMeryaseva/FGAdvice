@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface LoadAdvice {
-    @GET("api/random/censored")
+    @GET("api/random")
     Call<Advice> getAdvice();
 }

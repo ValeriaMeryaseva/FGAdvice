@@ -19,12 +19,18 @@ public class FavoritesFragment extends Fragment {
 
     @ViewById(R.id.favorites_list)
     ListView mFavoritesListView;
+    FavoritesListAdapter adapter;
 
     @AfterViews
     public void bindViews() {
         DatabaseDAO db = DatabaseDAO.getDBInstance(getActivity());
         List<Advice> adviceList = DatabaseHelper.getAdvices(db);
-        FavoritesListAdapter adapter = new FavoritesListAdapter(getActivity(), adviceList);
+        adapter = new FavoritesListAdapter(getActivity(), adviceList);
         mFavoritesListView.setAdapter(adapter);
+    }
+
+    public void UpdateList(Advice advice){
+        adapter.addElement(advice);
+        adapter.notifyDataSetChanged();
     }
 }
